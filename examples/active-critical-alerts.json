@@ -2,6 +2,18 @@
   "name": "Nizlo - list active critical alerts",
   "nodes": [
     {
+      "parameters": {
+        "width": 620,
+        "height": 220,
+        "content": "## Read-only Nizlo critical-alert starter\n\n**Prerequisites:** self-hosted n8n with the public `n8n-nodes-nizlo` community node installed, plus a Nizlo personal access token whose effective permissions include `alerts.view`.\n\nThis workflow starts inactive, contains no credential, and retrieves at most 50 active critical alerts. Select a local Nizlo credential before the first manual run. It does not send messages, create tickets, run scripts, patch or reboot endpoints, open remote sessions, or change Nizlo data."
+      },
+      "id": "db3d28ab-3883-4ab8-aa9a-6ed23d3097d0",
+      "name": "Read this first",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [220, 40]
+    },
+    {
       "parameters": {},
       "id": "1fda8cbb-80ab-446f-acfe-1345ac5e2586",
       "name": "Run manually",
