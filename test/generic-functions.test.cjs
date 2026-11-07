@@ -1,5 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const {
   compactQuery,
@@ -33,4 +35,18 @@ test('list helpers fail closed on malformed responses', () => {
   assert.deepEqual(listItems({ items: 'not-an-array' }), []);
   assert.equal(listTotal({ total: -1 }), undefined);
   assert.equal(listTotal({ total: '2' }), undefined);
+});
+
+test('example workflows are valid JSON and reference the packaged Nizlo node', () => {
+  const examplesDirectory = path.join(__dirname, '..', 'examples');
+  const files = fs.readdirSync(examplesDirectory).filter((file) => file.endsWith('.json'));
+  assert.equal(files.length, 2);
+
+  for (const file of files) {
+    const workflow = JSON.parse(fs.readFileSync(path.join(examplesDirectory, file), 'utf8'));
+    const nizloNodes = workflow.nodes.filter((node) => node.type === 'n8n-nodes-nizlo.nizlo');
+    assert.equal(nizloNodes.length, 1, `${file} must contain exactly one Nizlo node`);
+    assert.equal(workflow.active, false, `${file} must be inactive when imported`);
+    assert.ok(workflow.connections['Run manually'], `${file} must start from a manual trigger`);
+  }
 });

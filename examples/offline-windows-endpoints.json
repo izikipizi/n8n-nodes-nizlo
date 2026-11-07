@@ -1,0 +1,52 @@
+{
+  "name": "Nizlo - list offline Windows endpoints",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "029063f5-c9f7-4545-95c8-008348a5b2b6",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "getMany",
+        "returnAll": false,
+        "limit": 100,
+        "deviceFilters": {
+          "status": "offline",
+          "platform": "WINDOWS",
+          "summary": true,
+          "lifecycle": "active"
+        }
+      },
+      "id": "9f294e05-b460-44f7-b23c-013d9906bbf0",
+      "name": "Get offline Windows endpoints",
+      "type": "n8n-nodes-nizlo.nizlo",
+      "typeVersion": 1,
+      "position": [500, 300]
+    }
+  ],
+  "connections": {
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "Get offline Windows endpoints",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "c42a817d-5b71-4d20-9942-5ae20fe83169",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

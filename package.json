@@ -29,11 +29,13 @@
     "lint": "n8n-node lint",
     "lint:fix": "n8n-node lint --fix",
     "test": "npm run build && node --test test/*.test.cjs",
+    "release": "n8n-node release",
     "prepublishOnly": "n8n-node prerelease",
     "prepare": "n8n-node build"
   },
   "files": [
-    "dist"
+    "dist",
+    "examples"
   ],
   "engines": {
     "node": ">=20.15"

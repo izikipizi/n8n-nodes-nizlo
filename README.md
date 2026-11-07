@@ -53,6 +53,15 @@ The node uses the fixed production API origin and does not accept a custom host,
 
 `Return All` follows Nizlo's stable page envelope until the reported total is reached. A bounded `Limit` is available when only part of the result set is needed.
 
+## Example workflows
+
+The repository includes two inactive, importable examples. Import the JSON into n8n, select your own **Nizlo API** credential on the Nizlo node, review the filters, and run it manually:
+
+- [`active-critical-alerts.json`](examples/active-critical-alerts.json) reads up to 50 unresolved critical alerts.
+- [`offline-windows-endpoints.json`](examples/offline-windows-endpoints.json) reads up to 100 active Windows endpoints currently reported offline.
+
+Neither example sends messages or mutates Nizlo data. They intentionally omit credentials so secrets never travel with the workflow file.
+
 ## Development
 
 ```bash
@@ -62,6 +71,10 @@ npm run lint
 ```
 
 The test command performs a clean n8n node build and checks resource routing, query compaction, and response-envelope handling.
+
+## Publishing
+
+Tagged releases are published by [GitHub Actions](.github/workflows/publish.yml) with npm provenance. The workflow requires the tag without its leading `v` to match `package.json`, reruns the build, tests, and official community-node lint rules, and uses npm Trusted Publishing rather than a long-lived repository secret.
 
 ## Security and limitations
 
