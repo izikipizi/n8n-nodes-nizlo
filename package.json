@@ -1,0 +1,60 @@
+{
+  "name": "n8n-nodes-nizlo",
+  "version": "0.1.0",
+  "description": "Read-only n8n community node for Nizlo RMM customers, sites, endpoints, and alerts",
+  "license": "MIT",
+  "homepage": "https://github.com/izikipizi/n8n-nodes-nizlo#readme",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "msp",
+    "rmm",
+    "nizlo"
+  ],
+  "author": {
+    "name": "Nizlo",
+    "email": "kip@nizlo.com",
+    "url": "https://nizlo.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/izikipizi/n8n-nodes-nizlo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/izikipizi/n8n-nodes-nizlo/issues"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "test": "npm run build && node --test test/*.test.cjs",
+    "prepublishOnly": "n8n-node prerelease",
+    "prepare": "n8n-node build"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.15"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/NizloApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Nizlo/Nizlo.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "^0.25.0",
+    "eslint": "^9.39.4",
+    "prettier": "^3.8.3",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

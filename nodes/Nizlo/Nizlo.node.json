@@ -1,0 +1,21 @@
+{
+  "node": "n8n-nodes-nizlo",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": ["IT Operations", "Development", "Developer Tools"],
+  "resources": {
+    "credentialDocumentation": [
+      {
+        "url": "https://github.com/izikipizi/n8n-nodes-nizlo#credentials"
+      }
+    ],
+    "primaryDocumentation": [
+      {
+        "url": "https://github.com/izikipizi/n8n-nodes-nizlo#readme"
+      },
+      {
+        "url": "https://nizlo.com/rmm-api"
+      }
+    ]
+  }
+}
