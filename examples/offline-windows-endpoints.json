@@ -2,6 +2,18 @@
   "name": "Nizlo - list offline Windows endpoints",
   "nodes": [
     {
+      "parameters": {
+        "width": 620,
+        "height": 220,
+        "content": "## Read-only offline-Windows endpoint starter\n\n**Prerequisites:** self-hosted n8n with the public `n8n-nodes-nizlo` community node installed, plus a Nizlo personal access token whose effective permissions include `devices.view`.\n\nThis workflow starts inactive, contains no credential, and retrieves at most 100 active Windows endpoints currently reported offline. Select a local Nizlo credential before the first manual run. It does not send messages, create tickets, run scripts, patch or reboot endpoints, open remote sessions, or change Nizlo data."
+      },
+      "id": "d3ceba57-289b-44ad-b7c4-b2dfeb3a9cf9",
+      "name": "Read this first",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [220, 40]
+    },
+    {
       "parameters": {},
       "id": "029063f5-c9f7-4545-95c8-008348a5b2b6",
       "name": "Run manually",
