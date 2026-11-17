@@ -23,7 +23,14 @@ Nizlo personal tokens remain attached to an active technician identity. Their ef
 
 ## Installation
 
-Until an npm release is available, a self-hosted n8n administrator can install the public GitHub package:
+Install the registry package in a self-hosted n8n instance with community nodes enabled:
+
+```bash
+cd ~/.n8n/nodes
+npm install n8n-nodes-nizlo
+```
+
+Until the first npm release is visible, the same source can be installed directly from the public GitHub repository:
 
 ```bash
 cd ~/.n8n/nodes

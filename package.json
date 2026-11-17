@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-nizlo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read-only n8n community node for Nizlo RMM customers, sites, endpoints, and alerts",
   "license": "MIT",
   "homepage": "https://github.com/izikipizi/n8n-nodes-nizlo#readme",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/izikipizi/n8n-nodes-nizlo.git"
+    "url": "git+https://github.com/izikipizi/n8n-nodes-nizlo.git"
   },
   "bugs": {
     "url": "https://github.com/izikipizi/n8n-nodes-nizlo/issues"
