@@ -32,7 +32,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
           registry-url: https://registry.npmjs.org
 
@@ -50,5 +50,5 @@ jobs:
       - name: Lint community node
         run: npm run lint
 
-      - name: Publish with provenance
-        run: npm publish --access public --provenance
+      - name: Publish with provenance through n8n node CLI
+        run: npm run release

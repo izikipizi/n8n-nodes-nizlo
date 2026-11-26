@@ -25,7 +25,7 @@ Nizlo personal tokens remain attached to an active technician identity. Their ef
 
 ## Installation
 
-A self-hosted n8n administrator can install the public package from its tagged [GitHub release](https://github.com/izikipizi/n8n-nodes-nizlo/releases/tag/v0.1.0). The package is currently distributed through GitHub.
+A self-hosted n8n administrator can install the public package from its tagged [GitHub release](https://github.com/izikipizi/n8n-nodes-nizlo/releases/tag/v0.1.0). The first npm registry release and n8n Cloud verification are pending.
 
 ```bash
 cd ~/.n8n/nodes
