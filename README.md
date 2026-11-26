@@ -11,6 +11,8 @@ The first release supports tenant-scoped reads for:
 
 List operations support server-side filters and pagination. The node does not create, update, delete, execute, patch, reboot, or remotely access anything.
 
+Use the [Nizlo n8n integration guide](https://izikipizi.github.io/nizlo-msp-operations-resources/n8n-rmm-integration.html?utm_source=github&utm_medium=repository&utm_campaign=n8n_integration&utm_content=readme) to review the permissions and run one inactive example in a test instance.
+
 ## Requirements
 
 - self-hosted n8n with community nodes enabled
@@ -23,14 +25,12 @@ Nizlo personal tokens remain attached to an active technician identity. Their ef
 
 ## Installation
 
-Install the tagged GitHub release in a self-hosted n8n instance with community nodes enabled:
+A self-hosted n8n administrator can install the public package from its tagged [GitHub release](https://github.com/izikipizi/n8n-nodes-nizlo/releases/tag/v0.1.0). The first npm registry release and n8n Cloud verification are pending.
 
 ```bash
 cd ~/.n8n/nodes
 npm install github:izikipizi/n8n-nodes-nizlo#v0.1.0
 ```
-
-The first npm registry release and n8n Cloud verification are pending.
 
 Restart n8n after installation. Review n8n's current [community-node installation guidance](https://docs.n8n.io/integrations/community-nodes/installation/) before adding any third-party package to a production instance.
 
@@ -76,7 +76,7 @@ The test command performs a clean n8n node build and checks resource routing, qu
 
 ## Publishing
 
-Tagged releases are published by [GitHub Actions](.github/workflows/publish.yml) with npm provenance. The workflow requires the tag without its leading `v` to match `package.json`, reruns the build, tests, and official community-node lint rules, and uses npm Trusted Publishing rather than a long-lived repository secret.
+The repository has an npm publishing workflow in [GitHub Actions](.github/workflows/publish.yml) with npm provenance. The workflow requires the tag without its leading `v` to match `package.json`, reruns the build, tests, and official community-node lint rules, and uses npm Trusted Publishing rather than a long-lived repository secret.
 
 ## Security and limitations
 
