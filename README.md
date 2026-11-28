@@ -13,6 +13,12 @@ List operations support server-side filters and pagination. The node does not cr
 
 Use the [Nizlo n8n integration guide](https://izikipizi.github.io/nizlo-msp-operations-resources/n8n-rmm-integration.html?utm_source=github&utm_medium=repository&utm_campaign=n8n_integration&utm_content=readme) to review the permissions and run one inactive example in a test instance.
 
+## Try the built-in HTTP Request workflow
+
+You can read the first 50 active critical alerts from an authorized Nizlo workspace using n8n's built-in HTTP Request node. The example starts inactive and uses a Header Auth credential with a Nizlo token limited to `alerts.view`. It requires no community-node installation.
+
+[Download the workflow and follow the setup steps](https://izikipizi.github.io/nizlo-msp-operations-resources/n8n-rmm-integration.html?utm_source=github&utm_medium=repository&utm_campaign=n8n_integration&utm_content=built_in_http#built-in-http-template).
+
 ## Requirements
 
 - self-hosted n8n with community nodes enabled
