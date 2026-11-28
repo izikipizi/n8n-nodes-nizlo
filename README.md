@@ -61,6 +61,8 @@ The node uses the fixed production API origin and does not accept a custom host,
 
 `Return All` follows Nizlo's stable page envelope until the reported total is reached. A bounded `Limit` is available when only part of the result set is needed.
 
+Use the [stale-device report preflight](https://izikipizi.github.io/nizlo-msp-operations-resources/rmm-api-integration-preflight-checklist.html?utm_source=github&utm_medium=repository&utm_campaign=n8n_integration&utm_content=stale_device_preflight#stale-device-inventory) to test cutoff dates, pagination and customer grouping before using endpoint reads in a scheduled report.
+
 ## Example workflows
 
 The repository includes two inactive, importable examples. Import the JSON into n8n, select your own **Nizlo API** credential on the Nizlo node, review the filters, and run it manually:
@@ -89,7 +91,7 @@ The repository has an npm publishing workflow in [GitHub Actions](.github/workfl
 - This package never asks for a browser session cookie, password, device credential, or agent enrollment token.
 - Keep personal tokens out of workflow fields, logs, source control, and screenshots; store them only in n8n credentials.
 - Independent service accounts are not currently available in Nizlo.
-- Production OpenAPI access can be restricted. The provider-owned overview is at [nizlo.com/rmm-api](https://nizlo.com/rmm-api).
+- The [public OpenAPI 3.1 contract](https://nizlo.com/openapi.json) documents the supported read-only endpoints. Protected routes require a token with the appropriate permissions. See the [RMM API overview](https://nizlo.com/rmm-api?utm_source=github&utm_medium=repository&utm_campaign=n8n_integration&utm_content=api_contract) for token scope and setup.
 - The node intentionally starts with read-only operations. Additional operations should not be added without narrow permissions, tests, and clear operator intent.
 
 ## Maintainer disclosure
